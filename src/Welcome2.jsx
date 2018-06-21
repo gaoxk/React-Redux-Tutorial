@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
-import {changeName, jadName} from './actions.js';
-import {reducer, getName} from './reducer.js';
+import {reducer, getName, changeName, jadName} from './client.js';
 import { bindActionCreators } from 'redux'
+
+//This component demonstrates Redux
 
 class Welcome2 extends React.Component {
  render() {
@@ -14,9 +15,4 @@ const mapStateToProps = state => {
   return {name: getName(state)};
 }
 
-const mapDispatchToProps = {
-  changeName,
-  jadName
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Welcome2);
+export default connect(mapStateToProps)(Welcome2);

@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+//This component demonstrates React
+
 class Welcome extends React.Component {
  constructor(props) {
    super(props);
