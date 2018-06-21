@@ -1,4 +1,4 @@
-export default const reducer = (state, action) => {
+export const reducer = (state, action) => {
   switch (action.type) {
     case "CHANGE_NAME":
       return {...state, name: action.name};
@@ -10,3 +10,5 @@ export default const reducer = (state, action) => {
       return state;
   }
 }
+
+export const getName = state => state.name;

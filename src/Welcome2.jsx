@@ -1,30 +1,22 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
-import {changeName, jadName} from './actions.js'
+import {changeName, jadName} from './actions.js';
+import {reducer, getName} from './reducer.js';
+import { bindActionCreators } from 'redux'
 
 class Welcome2 extends React.Component {
-
- componentDidMount() {
-   setTimeout(
-     () =>
-       this.setState({
-         message: this.state.message + "I also like React and Redux!"
-       }),
-     3000
-   );
- }
-
- componentWillMount() {
-   this.setState({
-     message: "Hello! My name is " + this.props.name + "... "
-   });
- }
-
  render() {
-   return <h1>{this.state.message}</h1>;
+   return <h1>{this.props.name}</h1>;
  }
 }
 
+const mapStateToProps = state => {
+  return {name: getName(state)};
+}
 
+const mapDispatchToProps = {
+  changeName,
+  jadName
+}
 
-export default Welcome2;
+export default connect(mapStateToProps, mapDispatchToProps)(Welcome2);

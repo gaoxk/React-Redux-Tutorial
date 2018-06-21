@@ -1,7 +1,7 @@
 import { createStore } from 'redux';
-import reducer from './reducer.js';
+import { reducer } from './reducer.js';
 
-const store = createStore(reducer);
+export const store = createStore(reducer , {name: 'Gregg'});
 
 store.subscribe(() => {
   console.log(store.getState());
