@@ -7,7 +7,7 @@ export const reducer = (state, action) => {
       return {...state, name: action.name};
       break;
     case "JAD_NAME":
-      return {...state, name: action.name, jad: true};
+      return {...state, name: 'Jad', jad: true};
       break;
     default:
       return state;
@@ -22,10 +22,10 @@ export const changeName = name => ({
   name: name
 });
 
-export const jadName = {
+export const jadName = () => ({
   type: 'JAD_NAME',
   name: 'Jad'
-};
+});
 
 //store
 export const store = createStore(reducer);
